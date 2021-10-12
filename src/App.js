@@ -1,14 +1,14 @@
 
 import Header from './components/Header'
 import Customers from './components/Customers';
+import Home from './pages/Home';
 
 
 function App() {
   return (
 
-    <div className="container">
-      <Header />
-      <Customers />
+    <div>
+      <Home />
     </div>
   );
 }
