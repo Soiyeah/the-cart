@@ -1,9 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Badge } from '@material-ui/core';
+import { ShoppingCartOutlined} from '@material-ui/icons';
+import { Link } from 'react-router-dom';
+import { Colors } from './Colors';
 
 const Container = styled.div`
     height: 60px;
-    background-color: aliceblue;
+    background-color: ${Colors.primary};
+    color: ${Colors.white};
 `
 const Wrapper = styled.div`
     padding: 10px 20px;
@@ -27,8 +32,14 @@ const Logo = styled.h1`
 
 const Right = styled.div`
     flex : 1; 
+    display: flex;
+    justify-content: flex-end;
 `;
 
+const MenuItem = styled.div`
+    cursor: pointer;
+    margin-left: 25px;
+`;
 
 const Navbar = () => {
     return (
@@ -38,7 +49,20 @@ const Navbar = () => {
                 <Center>
                     <Logo>A.</Logo>
                 </Center>
-                <Right>Right</Right>
+                <Right>
+
+                    <MenuItem>ABOUT US</MenuItem>
+                    <MenuItem>CONTACT</MenuItem>
+
+                    <Link to="/cart">
+                        <MenuItem >
+                            <Badge badgeContent={4} color="primary">
+                                <ShoppingCartOutlined />
+                            </Badge>
+                        </MenuItem>
+                    </Link>
+
+                </Right>
             </Wrapper>
         </Container>
     )
