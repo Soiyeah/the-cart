@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {Colors} from "./Colors.js";
+import {Colors} from "../helper/Colors.js";
 
 const Container = styled.div`
     background-color: ${Colors.primary};

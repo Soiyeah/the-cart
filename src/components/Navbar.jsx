@@ -3,15 +3,16 @@ import styled from 'styled-components'
 import { Badge } from '@material-ui/core';
 import { ShoppingCartOutlined} from '@material-ui/icons';
 import { Link } from 'react-router-dom';
-import { Colors } from './Colors';
+import { Colors } from '../helper/Colors';
 
 const Container = styled.div`
     height: 60px;
     background-color: ${Colors.primary};
     color: ${Colors.white};
+    padding: 3% 10%;
 `
 const Wrapper = styled.div`
-    padding: 10px 20px;
+    /* padding: 10px 20px; */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -21,13 +22,9 @@ const Left = styled.div`
     flex : 1;
 `;
 
-const Center = styled.div`
-    flex : 1;
-    text-align: center;
-`;
-
-const Logo = styled.h1`
-    font-weight: bold;
+const Logo = styled.h3`
+    font-weight: 800;
+    font-size: 22px;
 `
 
 const Right = styled.div`
@@ -38,21 +35,22 @@ const Right = styled.div`
 
 const MenuItem = styled.div`
     cursor: pointer;
-    margin-left: 25px;
+    margin-left: 10%;
 `;
 
 const Navbar = () => {
     return (
         <Container>
             <Wrapper>
-                <Left>Left</Left>
-                <Center>
-                    <Logo>A.</Logo>
-                </Center>
+                <Left>
+                    <Logo>Dear Molly,</Logo>
+                </Left>
+        
                 <Right>
 
-                    <MenuItem>ABOUT US</MenuItem>
-                    <MenuItem>CONTACT</MenuItem>
+                    <MenuItem>Home</MenuItem>
+                    <MenuItem>Shop</MenuItem>
+                    <MenuItem>About us</MenuItem>
 
                     <Link to="/cart">
                         <MenuItem >

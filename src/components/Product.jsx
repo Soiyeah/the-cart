@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import greenDoll from '../assets/green_doll.png'
 
 const Container = styled.div`
     flex: 1;
@@ -8,7 +9,6 @@ const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    /* background-color: #d3d3d3; */
     border-radius: 3px;
     position: relative;
     flex-direction: column;
@@ -53,7 +53,7 @@ const Button = styled.button`
 const Product = ({item}) => {
     return (
         <Container>
-            <Image src="https://png2.cleanpng.com/dy/c7ffba507938bae9043b9ee75e5aa332/L0KzQYm3UcI5N6NqfZH0aYP2gLBuTgNpaZ51h9G2YnB3hL3sTfNwdaF6jNd7LXbsfLa0lvVkfJD3ReJqaX73dbW0kBhidaF0h59CYYTogn7pjCR1dJZ4RadqNnW6RIKCgcI6PZM3Rqc9MEi6QYeAUcUyP2I9UKM7MUa5RnB3jvc=/kisspng-shampoo-bottle-computer-file-vector-painted-shampoo-water-bottles-5a6e7419a295b2.540871671517188121666.png" alt="bear" />
+            <Image src={greenDoll} alt="green doll" />
             <Info>
                 <Title>{item.name}</Title>
                 <Price>Rs. {item.price}.00</Price>
