@@ -1,9 +1,10 @@
 
-import Header from './components/Header'
-import Customers from './components/Customers';
-import Home from './pages/Home';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+// import Header from './components/Header'
+// import Customers from './components/Customers';
+import Home from './pages/Home';
 import Cart from './pages/Cart';
+import ProductPage from './pages/ProductPage';
 
 
 function App() {
@@ -18,6 +19,9 @@ function App() {
           <Cart />
         </Route>
 
+        <Route path="/product">
+          <ProductPage />
+        </Route>
 
       </Switch>
     </Router>

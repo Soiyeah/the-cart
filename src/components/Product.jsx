@@ -1,5 +1,8 @@
+
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import greenDoll from '../assets/green_doll.png'
+
 
 const Container = styled.div`
     flex: 1;
@@ -51,15 +54,19 @@ const Button = styled.button`
 `;
 
 const Product = ({item}) => {
+
+   
     return (
         <Container>
+
+            <Link to={`/product/${item.id}`}>
             <Image src={greenDoll} alt="green doll" />
             <Info>
                 <Title>{item.name}</Title>
                 <Price>Rs. {item.price}.00</Price>
                 <Button>Add to cart</Button>
             </Info>
-            
+            </Link>
             
         </Container>
     )
