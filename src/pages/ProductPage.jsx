@@ -5,6 +5,8 @@ import styled from "styled-components";
 import { Colors } from "../helper/Colors";
 import Navbar from "../components/Navbar";
 import { Button } from "@material-ui/core";
+import { addProduct } from "../redux/cartRedux";
+import { useDispatch } from "react-redux";
 
 const Container = styled.div`
     width: 100%;
@@ -42,18 +44,19 @@ const ProductPage = () => {
     const id = location.pathname.split("/")[2];
     const [product, setProduct] = useState([]);
     const [quantity, setQuantity] = useState(1);
+    const dispatch = useDispatch();
     
 
-      useEffect(() =>{
+    useEffect(() => {
         const fetchProduct = () => {
-            publicRequest.get("product/"+id).then(res =>{
-              console.log(res);
-              setProduct(res.data);
+            publicRequest.get("product/" + id).then(res => {
+                console.log(res);
+                setProduct(res.data);
             })
-          };
+        };
 
         fetchProduct();
-      },[id])
+    }, [id]);
 
     
     const handleQuantity = (type) => {
@@ -62,12 +65,17 @@ const ProductPage = () => {
             quantity > 1 && setQuantity(quantity - 1);
         } else {
             quantity < product.availableQty ? setQuantity(quantity + 1) :
-            console.log("Not enough stock!");
+            console.log("Not enough stocks!");
             
         }
         return quantity;
     };
     
+    const handleAddToCart = () => {
+        dispatch(
+            addProduct({ ...product, quantity }) // pass all of product and product quantity
+        );
+    };
     
     return (
         <Container>
@@ -89,7 +97,7 @@ const ProductPage = () => {
                         <Button onClick={() => handleQuantity("inc")}> + </Button>
                     </QuantitySelector>
 
-                    <Button>Add to cart</Button>
+                    <Button onClick={handleAddToCart}>Add to cart</Button>
                     
                 </DetailsPane>
 
