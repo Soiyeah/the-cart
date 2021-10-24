@@ -18,8 +18,8 @@ const Container = styled.div`
 `;
 
 const Image = styled.img`
-    max-width: 90%;
-    max-height: 90%;
+    max-width: 300px;
+    max-height: 300px;
     object-fit: cover;
     overflow: auto;
     margin: 20px;

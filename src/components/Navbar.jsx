@@ -35,6 +35,7 @@ const Right = styled.div`
 `;
 
 const MenuItem = styled.div`
+    text-decoration: none;
     cursor: pointer;
     margin-left: 10%;
 `;
@@ -52,7 +53,10 @@ const Navbar = () => {
         
                 <Right>
 
-                    <MenuItem>Home</MenuItem>
+                    <Link to={"/"}>
+                        <MenuItem>Home</MenuItem>
+                    </Link>
+
                     <MenuItem>Shop</MenuItem>
                     <MenuItem>About us</MenuItem>
 
