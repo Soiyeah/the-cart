@@ -53,7 +53,8 @@ const Cart = () => {
                 </CartItems>
                 <OrderSummary>
                     <h1>Order Summary</h1>
-                    <h2>Total: {cart.total}</h2>
+                    <h2>Total: {cart.total.toFixed(2)}</h2>
+                    <Button variant="contained" color="green" >Checkout</Button>
                 </OrderSummary>
             </Wrapper>
         </Container>

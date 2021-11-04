@@ -1,6 +1,6 @@
 import { publicRequest } from "../helper/RequestMethods";
 import { useLocation } from "react-router-dom";
-import {useState,useEffect} from 'react';
+import { useState, useEffect } from 'react';
 import styled from "styled-components";
 import { Colors } from "../helper/Colors";
 import Navbar from "../components/Navbar";
@@ -45,7 +45,7 @@ const ProductPage = () => {
     const [product, setProduct] = useState([]);
     const [quantity, setQuantity] = useState(1);
     const dispatch = useDispatch();
-    
+
 
     useEffect(() => {
         const fetchProduct = () => {
@@ -58,25 +58,25 @@ const ProductPage = () => {
         fetchProduct();
     }, [id]);
 
-    
+
     const handleQuantity = (type) => {
-        
+
         if (type === "dec") {
             quantity > 1 && setQuantity(quantity - 1);
         } else {
             quantity < product.availableQty ? setQuantity(quantity + 1) :
-            console.log("Not enough stocks!");
-            
+                console.log("Not enough stocks!");
+
         }
         return quantity;
     };
-    
+
     const handleAddToCart = () => {
         dispatch(
             addProduct({ ...product, quantity }) // pass all of product and product quantity
         );
     };
-    
+
     return (
         <Container>
             <Navbar />
@@ -98,7 +98,7 @@ const ProductPage = () => {
                     </QuantitySelector>
 
                     <Button onClick={handleAddToCart}>Add to cart</Button>
-                    
+
                 </DetailsPane>
 
 
